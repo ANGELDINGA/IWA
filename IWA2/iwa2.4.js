@@ -4,7 +4,8 @@
 const user = 'John'
 
 
-/* This is the lastname of the user /* const surname = 'Smith'
+/* This is the lastname of the user /* 
+const surname = 'Smith'
 
 
 console.log(user; surname;)

@@ -1,7 +1,6 @@
 // scripts.js
-import {role as nwabisa} from "./IWA3/challenge2/nwabisa.js";
-import {role as johannes} from "./IWA3/challenge2/johannes.js";
-import {role as alex} from "./IWA3/challenge2/alex.js";
+import {role as nwabisa} from './nwabisa.js';
+import {role as johanes} from './johannes.js';
+import {role as alex} from './alex.js';
 
-
-console.log('Roles:', nwabisa, ",", johannes,",", alex)
+console.log('Roles:', nwabisa,"," ,johanes,",", alex)
