@@ -5,8 +5,6 @@ function add (a, b) { return a + b }
 function multiply (a, b) { return a * b }
 
 function internal() {
-    add ()
-    multiply()
 	const added = add(this.internal.c, this.internal.c)
 	const multiplied = multiply(this.internal.b, this.internal.c)
 	console.log(added + multiplied)
