@@ -1,10 +1,10 @@
-firstName = 'John';
-age = 35;
-hobby = 'Coding';
+const firstName = 'John';
+const age = 35;
+const hobby = 'Coding';
 
-const logTwice = () => {
-    console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
-    console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
-  }
+function hobbies () {
+  console.log(`Hello, ${firstName} (${age}). I love ${hobby}!\n`.repeat(2))
+}
 
-  logTwice ()
+hobbies()
+ 

@@ -54,7 +54,7 @@ const futureId = 9
 // Do not change code above this comment
 
 console.log(holidays[futureId] && holidays[futureId].name || `ID ${futureId} not created yet`);
-
+//  checks whether an item has been assigned to the 9 key & logs the name of the holiday or logs not created
 
 const correctDate = new Date(`25 December ${currentYear} 00:00`);
 const copied = {
@@ -63,7 +63,7 @@ const copied = {
     copied_name: 'Xmas-day',
     copied_date: correctDate,
 }
-
+// object that changes name of holiday and variable with correct time.
 const isEarlier = correctDate < holidays[6].date;
 
 if (isEarlier){
@@ -87,3 +87,5 @@ console.log(`${lastHolidayTimestamp.getDate()}/${lastHolidayTimestamp.getMonth()
 const randomIndex = Math.floor(Math.random()*10)
 const randomHoliday = holidays[randomIndex].date;
 console.log(`${randomHoliday.getDate()}/${randomHoliday.getMonth()+1}/${randomHoliday.getFullYear()}`);
+
+//max & min
