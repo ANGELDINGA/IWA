@@ -110,3 +110,4 @@ const MONTHS = [
   }
   createHtml(data.response.data.NM372)
   createHtml(data.response.data.SV782)
+  
