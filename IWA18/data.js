@@ -72,7 +72,7 @@ const createUniqueId = () => {
  */
 export const createOrderData = (props) => {
     const { title, table, column } = props
-
+//assigning variable to index 
     return {
         title,
         table,

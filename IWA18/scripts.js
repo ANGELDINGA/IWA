@@ -39,18 +39,35 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 }
 
+let draggedItem = null;
+let draggingElement = null;
+let id = null;
+
+// drag start handler
 const handleDragStart = (event) => {
-    dragItem = event.target.closest(".order");
-    dragElement = state.dragging.over;
-    id = dragItem.dataset.id;
+    draggedItem = event.target.closest(".order");
+    draggingElement = state.dragging.over;
+    id = draggedItem.dataset.id;
 }
 
+// drag end handler
 const handleDragEnd = (event) => {
     event.preventDefault();
     const moveTo = state.dragging.over;
     moveToColumn(id, moveTo);
-    updateDraggingHtml({over: null});
+    updateDraggingHtml({ over: null });
 }
+
+// Event listeners for drag-and-drop
+for (const htmlColumn of Object.values(html.columns)) {
+    htmlColumn.addEventListener('dragstart', handleDragStart);
+    htmlColumn.addEventListener('dragend', handleDragEnd);
+}
+
+for (const htmlArea of Object.values(html.area)) {
+    htmlArea.addEventListener('dragover', handleDragOver);
+}
+
 
 const handleHelpToggle = (event) => {
     if (!html.help.overlay.open) {
@@ -116,12 +133,13 @@ const handleEditSubmit = (event) => {
 }
 
 const handleDelete = (event) => {
-    const activeElementId = document.querySelector('[data-edit-id]')
-    const actualId = activeElementId.getAttribute('data-edit-id')
-    const orderId = document.querySelector(`[data-id="${actualId}"]`)
-    orderId.remove()
-    html.edit.overlay.close()
+    const activeElementId = document.querySelector('[data-id]');
+    const actualId = activeElementId.dataset.id;
+    const orderId = document.querySelector(`[data-id="${actualId}"]`);
+    orderId.remove();
+    html.edit.overlay.close();
 }
+
 
 html.add.cancel.addEventListener('click', handleAddToggle)
 html.other.add.addEventListener('click', handleAddToggle)
